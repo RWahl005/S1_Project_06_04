@@ -12,3 +12,219 @@
    Filename: br_styles.css
 
 */
+
+/* Background and html styles */
+html {
+    background-image: url(br_paper.png);
+}
+
+body {
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    min-width: 530px;
+    margin: auto;
+    box-shadow: 0px 0px 20px black;
+}
+
+body::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/* Header Styles */
+header img {
+    display: block;
+    margin: auto;
+}
+
+header>nav {
+    display: table;
+    width: 100%;
+}
+
+header>nav a {
+    padding: 10px;
+    text-decoration: none;
+}
+
+header nav>ul {
+    display: table-row;
+}
+
+header nav>ul>li {
+    display: table-cell;
+    text-align: center;
+}
+
+header nav>ul>li>a {
+    display: block;
+}
+
+header>nav a:visited,
+header>nav a:link {
+    background-color: rgb(10, 99, 233);
+    color: white;
+}
+
+header>nav a:visited.active,
+header>nav a:link.active {
+    background-color: rgb(120, 169, 243);
+    color: white;
+}
+
+header>nav a:hover,
+header>nav a:link {
+    background-color: rgb(132, 184, 252);
+    color: white;
+}
+
+/* Layout Styles */
+
+main section.listing {
+    display: grid;
+    grid-template-rows: auto;
+    /*                      image     */
+    grid-template-columns: 3% 35% 20% 30% 2%;
+}
+
+main section.listing img {
+    /* width: 50%;
+    float: left; */
+    grid-column: 2;
+    width: 100%;
+}
+
+main section.listing>p {
+    /* width: 50%;
+    float: left; */
+    grid-column: 4;
+}
+
+main section.desc {
+    clear: both;
+}
+
+/* Listing Styles */
+
+main section.listing img {
+    display: block;
+    margin: auto;
+    -webkit-filter: saturate(2) brightness(1.1);
+    filter: saturate(2) brightness(1.1);
+}
+
+main section.listing P {
+    text-align: center;
+    line-height: 2em;
+    background-image: radial-gradient(farthest-side at 80% 80%, rgb(233, 230, 230), rgb(182, 180, 180));
+    border: 1px solid blue;
+    border-radius: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+main section.listing p::first-line {
+    text-emphasis: bold;
+    font-size: 1.4em;
+}
+
+/* Description Styles */
+main section.desc p {
+    text-align: left;
+    margin-left: 50px;
+    text-indent: 1em;
+}
+
+main section.desc {
+    margin-top: 30px;
+}
+
+/* Aside styles */
+
+aside nav li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+aside nav ul {
+    margin-top: 20px;
+}
+
+aside nav li a {
+    padding: 5px;
+    background-image: linear-gradient(to right, rgb(170, 167, 167), gray);
+    color: white;
+}
+
+aside nav li a:hover {
+    background-image: linear-gradient(to right, rgb(207, 205, 205), rgb(150, 149, 149));
+}
+
+aside::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/* Images */
+.row {
+    clear: both;
+}
+
+.row::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+[class^="col"] {
+    float: left;
+    box-sizing: border-box;
+}
+
+.col-33 {
+    width: 33%;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-shadow: 3px 3px 3px gray;
+}
+
+figure img {
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    -webkit-filter: saturate(1.9);
+    filter: saturate(1.9);
+}
+
+figcaption {
+    text-align: center;
+}
+
+figure.left,
+figure.right {
+    perspective: 300px;
+}
+
+figure.left img {
+
+    transform-style: preserve-3d;
+    transform: rotatey(2deg);
+
+}
+
+figure.right img {
+
+    transform-style: preserve-3d;
+    transform: rotatey(-2deg);
+
+}
