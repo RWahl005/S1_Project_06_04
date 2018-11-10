@@ -15,18 +15,25 @@
 
 /* Background and html styles */
 html {
+    /* Sets the background to a paper image repeating. */
     background-image: url(br_paper.png);
 }
 
 body {
+    /* The background color is set to white. */
     background-color: white;
+    /* Width of the body is 100% */
     width: 100%;
+    /* Max and min width is set to keep the page looking better when smaller. */
     max-width: 1000px;
     min-width: 530px;
+    /* Centers the body. */
     margin: auto;
+    /* Adds in a box shadow around the left and right sides. */
     box-shadow: 0px 0px 20px black;
 }
 
+/* Expands the body to fit all of the floated content. */
 body::after {
     clear: both;
     content: "";
@@ -35,47 +42,45 @@ body::after {
 
 /* Header Styles */
 header img {
+    /* Centers the image on the page. */
     display: block;
     margin: auto;
 }
 
 header>nav {
+    /* Sets the navigation to table so it is displayed evenly */
     display: table;
     width: 100%;
 }
 
 header>nav a {
+    /* Sets the padding and removes the underline */
     padding: 10px;
     text-decoration: none;
+    display: block;
 }
 
 header nav>ul {
+    /* Sets the list to a row */
     display: table-row;
 }
 
 header nav>ul>li {
+    /* Each lit item is made a cell and the text is centered. */
     display: table-cell;
     text-align: center;
 }
 
-header nav>ul>li>a {
-    display: block;
-}
-
+/* Colors visited and unvisited links */
 header>nav a:visited,
 header>nav a:link {
     background-color: rgb(10, 99, 233);
     color: white;
 }
 
-header>nav a:visited.active,
-header>nav a:link.active {
-    background-color: rgb(120, 169, 243);
-    color: white;
-}
-
+/* When an item is active or hovered over. */
 header>nav a:hover,
-header>nav a:link {
+header>nav a:active {
     background-color: rgb(132, 184, 252);
     color: white;
 }
@@ -83,41 +88,47 @@ header>nav a:link {
 /* Layout Styles */
 
 main section.listing {
+    /* Sets the display to grid so that a grid would be inside the section. */
     display: grid;
+    /* Sets one row */
     grid-template-rows: auto;
-    /*                      image     */
+    /* Sets the columns */
+    /*                      image     address    */
     grid-template-columns: 3% 35% 20% 30% 2%;
 }
 
 main section.listing img {
-    /* width: 50%;
-    float: left; */
+    /* Sets the grid column to 2 for the image. */
     grid-column: 2;
     width: 100%;
 }
 
 main section.listing>p {
-    /* width: 50%;
-    float: left; */
+    /* Sets the column to 4 for the address */
     grid-column: 4;
 }
 
 main section.desc {
+    /* Makes sure the description clears the grid. */
     clear: both;
 }
 
 /* Listing Styles */
 
 main section.listing img {
+    /* Centers the image. */
     display: block;
     margin: auto;
+    /* Added a filter to make the image look more life like. (Progressive enhancement used here) */
     -webkit-filter: saturate(2) brightness(1.1);
     filter: saturate(2) brightness(1.1);
 }
 
-main section.listing P {
+main section.listing p {
     text-align: center;
+    /* Changes the line height to be better in the adress bar. */
     line-height: 2em;
+    /* Sets the background image to a circle gradient at the bottom right corner. */
     background-image: radial-gradient(farthest-side at 80% 80%, rgb(233, 230, 230), rgb(182, 180, 180));
     border: 1px solid blue;
     border-radius: 30px;
@@ -127,6 +138,7 @@ main section.listing P {
     vertical-align: middle;
 }
 
+/* Bolds and sets the font size to 1.4em of Address: text. */
 main section.listing p::first-line {
     text-emphasis: bold;
     font-size: 1.4em;
@@ -136,16 +148,19 @@ main section.listing p::first-line {
 main section.desc p {
     text-align: left;
     margin-left: 50px;
+    /* Sets the text indent so that it is in paragraph form. */
     text-indent: 1em;
 }
 
 main section.desc {
+    /* Sets the top margin to 30 pixels. */
     margin-top: 30px;
 }
 
 /* Aside styles */
 
 aside nav li {
+    /* Floats the list items left to put them in a line. Each listitem has a width of 25% */
     float: left;
     width: 25%;
     text-align: center;
@@ -157,14 +172,17 @@ aside nav ul {
 
 aside nav li a {
     padding: 5px;
+    /* Sets the background image to a linear gradient going to the right. */
     background-image: linear-gradient(to right, rgb(170, 167, 167), gray);
     color: white;
 }
 
 aside nav li a:hover {
+    /* The linear-gradient is lighter when hovered over */
     background-image: linear-gradient(to right, rgb(207, 205, 205), rgb(150, 149, 149));
 }
 
+/* Prevents container collapse of the aside element. */
 aside::after {
     clear: both;
     content: "";
@@ -173,20 +191,24 @@ aside::after {
 
 /* Images */
 .row {
+    /* Clears the float on the left and right margin */
     clear: both;
 }
 
+/* Prevents container collapse for the rows. */
 .row::after {
     clear: both;
     content: "";
     display: table;
 }
 
+/* Any class that starts with col. */
 [class^="col"] {
     float: left;
     box-sizing: border-box;
 }
 
+/* All classes of col-33 are set to a width of 33% */
 .col-33 {
     width: 33%;
 }
@@ -195,13 +217,17 @@ h2 {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
+    /* Adds in text shadow to the text. */
     text-shadow: 3px 3px 3px gray;
 }
 
 figure img {
+    /* Centers the image */
     display: block;
     margin: auto;
+    /* Makes the image round. */
     border-radius: 10px;
+    /* Makes the image pop out more (but not as much as the top image) */
     -webkit-filter: saturate(1.9);
     filter: saturate(1.9);
 }
@@ -212,12 +238,14 @@ figcaption {
 
 figure.left,
 figure.right {
+    /* Sets the perspective for the 3d. (The smaller the number the father away the perspective is from the object.) */
     perspective: 300px;
 }
 
 figure.left img {
-
+    /* Preserves the 3d aspect */
     transform-style: preserve-3d;
+    /* Roatates on the y axis by 2 degrees */
     transform: rotatey(2deg);
 
 }
@@ -225,6 +253,10 @@ figure.left img {
 figure.right img {
 
     transform-style: preserve-3d;
+    /* Rotates on the y axis by -2 degrees */
     transform: rotatey(-2deg);
+}
 
+section.images{
+    margin-bottom: 30px;
 }
